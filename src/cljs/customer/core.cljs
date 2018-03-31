@@ -5,8 +5,6 @@
             [goog.events :as events]
             [goog.history.EventType :as HistoryEventType]
             [markdown.core :refer [md->html]]
-           ; [customer.ajax :refer [load-interceptors!]]
-            []
             [ajax.core :refer [GET POST]])
   (:import goog.History))
 
@@ -36,7 +34,7 @@
 
 
 (defn send-post! [fields]
-  (POST "/message"
+  (POST "/register"
         {:params @fields
          :handler #(.log js/console (str "response:" %))
          :error-handler #(.error js/console (str "error:" %))}))

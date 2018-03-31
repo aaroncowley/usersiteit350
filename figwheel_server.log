@@ -994,3 +994,22 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/customer/co
 Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
 [32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 0.855 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 0.141 seconds.[0m
+[36m----  Could not Analyze  src/cljs/customer/core.cljs   line:1  column:1  ----[0m
+
+  [1mLibrary name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/customer/core.cljs[0m
+
+  [33m1[0m  [1m(ns customer.core[0m
+  [0m [0m  [33m^--- Library name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/customer/core.cljs[0m
+  [36m2[0m  [36m  (:require [reagent.core :as r][0m
+  [36m3[0m  [36m            [reagent.session :as session][0m
+  [36m4[0m  [36m            [secretary.core :as secretary :include-macros true][0m
+
+[36m----  Analysis Error : Please see src/cljs/customer/core.cljs  ----[0m
+Figwheel: Can't open  ("src/cljs/customer/core.cljs" 1 1) No :open-file-command supplied in the config.
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.721 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js

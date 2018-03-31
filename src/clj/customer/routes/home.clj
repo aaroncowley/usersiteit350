@@ -18,7 +18,7 @@
   (GET "/docs" []
        (-> (response/ok (-> "docs/docs.md" io/resource slurp))
            (response/header "Content-Type" "text/plain; charset=utf-8")))
-  (POST "/message" req 
+  (POST "/register" req 
         (db/save-user req)))
   
 
