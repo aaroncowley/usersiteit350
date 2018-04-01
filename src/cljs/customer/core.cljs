@@ -36,7 +36,7 @@
 (defn send-post! [fields]
   (POST "/register"
         {:params @fields
-         :handler #(.log js/console (str "response:" %))
+         :handler #(secretary/dispatch! "#/about")
          :error-handler #(.error js/console (str "error:" %))}))
 
 

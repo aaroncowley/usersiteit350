@@ -10,7 +10,14 @@
 (defn home-page []
   (layout/render "home.html"))
 
+(defn user-saved [params]
+  (db/save-user (:params params))
+  (response/ok "user saved"))
 
+(defn login [params]
+  (db/login
+   (:params params))
+  (response/ok "Successful login"))
 
 (defroutes home-routes
   (GET "/" []
@@ -18,7 +25,7 @@
   (GET "/docs" []
        (-> (response/ok (-> "docs/docs.md" io/resource slurp))
            (response/header "Content-Type" "text/plain; charset=utf-8")))
-  (POST "/register" req 
-        (db/save-user req)))
-  
-
+  (POST "/register" req
+        (user-saved req))
+  (POST "/login" req
+        (login req)))
