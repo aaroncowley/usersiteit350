@@ -15,6 +15,9 @@
   (mc/insert db "users" params))
 
 (defn login [params]
-  (mc/find-one db "customers" {:email params :password params}))
+  (mc/find-one db "users" {:email params :password params}))
+
+(defn buy [params]
+  (mc/insert db "cart" {:user params :cart params}))
 
 

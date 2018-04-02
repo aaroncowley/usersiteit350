@@ -1040,3 +1040,122 @@ Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "sr
 notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 1.278 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 0.967 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 1.016 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/customer/core.cljs   line:124  column:62  ----[0m
+
+  [1mUse of undeclared Var customer.core/send-buy![0m
+
+  [36m120[0m  [36m              {:type :password[0m
+  [36m121[0m  [36m              :password :password[0m
+  [36m122[0m  [36m              :on-change #(swap! fields assoc :password (-> % .-target .-value))[0m
+  [36m123[0m  [36m              :value (:password @fields)}]][0m
+  [33m124[0m  [1m          [:input.btn.btn-primary {:type :submit :on-click #(send-buy! fields) :value "Submit"}]]])))[0m
+  [0m   [0m  [33m                                                             ^--- Use of undeclared Var customer.core/send-buy![0m
+  [36m125[0m  [36m[0m
+  [36m126[0m  [36m(defn about-page [][0m
+  [36m127[0m  [36m  [:div.container[0m
+  [36m128[0m  [36m   [:div.row[0m
+  [36m129[0m  [36m    [:div.col-md-12[0m
+
+[36m----  Compiler Warning : Please see src/cljs/customer/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/customer/core.cljs   line:148  column:7  ----[0m
+
+  [1mUse of undeclared Var customer.core/buy-grid[0m
+
+  [36m144[0m  [36m(defn buy-page [][0m
+  [36m145[0m  [36m  [:div.container[0m
+  [36m146[0m  [36m   [:div.row[0m
+  [36m147[0m  [36m    [:div.col-md-12[0m
+  [33m148[0m  [1m     [buy-grid]]]])[0m
+  [0m   [0m  [33m      ^--- Use of undeclared Var customer.core/buy-grid[0m
+  [36m149[0m  [36m[0m
+  [36m150[0m  [36m[0m
+  [36m151[0m  [36m[0m
+  [36m152[0m  [36m(defn home-page [][0m
+  [36m153[0m  [36m  [:div.container[0m
+
+[36m----  Compiler Warning : Please see src/cljs/customer/core.cljs  ----[0m
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 0.764 seconds.[0m
+[36m----  Could not Read  src/cljs/customer/core.cljs   line:183 ----[0m
+
+  [1m/home/s33r/Projects/customer/src/cljs/customer/core.cljs [line 183, col 27] Invalid symbol: /buy.[0m
+
+  [36m181[0m  [36m(secretary/defroute "/login" [][0m
+  [36m182[0m  [36m  (swap! session assoc :page :login))[0m
+  [33m183[0m  [1m"(secretary/defroute "/buy" [][0m
+  [0m   [0m  [33m/home/s33r/Projects/customer/src/cljs/customer/core.cljs [line 183, col 27] Invalid symbol: /buy.[0m
+  [36m184[0m  [36m  (swap! session assoc :page :buy))"[0m
+  [36m185[0m  [36m[0m
+  [36m186[0m  [36m;; -------------------------[0m
+
+[36m----  Reader Error : Please see src/cljs/customer/core.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/customer/core.cljs   line:124  column:62  ----[0m
+
+  [1mUse of undeclared Var customer.core/send-buy![0m
+
+  [36m120[0m  [36m              {:type :password[0m
+  [36m121[0m  [36m              :password :password[0m
+  [36m122[0m  [36m              :on-change #(swap! fields assoc :password (-> % .-target .-value))[0m
+  [36m123[0m  [36m              :value (:password @fields)}]][0m
+  [33m124[0m  [1m          [:input.btn.btn-primary {:type :submit :on-click #(send-buy! fields) :value "Submit"}]]])))[0m
+  [0m   [0m  [33m                                                             ^--- Use of undeclared Var customer.core/send-buy![0m
+  [36m125[0m  [36m[0m
+  [36m126[0m  [36m(defn about-page [][0m
+  [36m127[0m  [36m  [:div.container[0m
+  [36m128[0m  [36m   [:div.row[0m
+  [36m129[0m  [36m    [:div.col-md-12[0m
+
+[36m----  Compiler Warning : Please see src/cljs/customer/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/customer/core.cljs   line:148  column:7  ----[0m
+
+  [1mUse of undeclared Var customer.core/buy-grid[0m
+
+  [36m144[0m  [36m(defn buy-page [][0m
+  [36m145[0m  [36m  [:div.container[0m
+  [36m146[0m  [36m   [:div.row[0m
+  [36m147[0m  [36m    [:div.col-md-12[0m
+  [33m148[0m  [1m     [buy-grid]]]])[0m
+  [0m   [0m  [33m      ^--- Use of undeclared Var customer.core/buy-grid[0m
+  [36m149[0m  [36m[0m
+  [36m150[0m  [36m[0m
+  [36m151[0m  [36m[0m
+  [36m152[0m  [36m(defn home-page [][0m
+  [36m153[0m  [36m  [:div.container[0m
+
+[36m----  Compiler Warning : Please see src/cljs/customer/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 0.997 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/customer/core.cljs   line:159  column:7  ----[0m
+
+  [1mUse of undeclared Var customer.core/buy-grid[0m
+
+  [36m155[0m  [36m(defn buy-page [][0m
+  [36m156[0m  [36m  [:div.container[0m
+  [36m157[0m  [36m   [:div.row[0m
+  [36m158[0m  [36m    [:div.col-md-12[0m
+  [33m159[0m  [1m     [buy-grid]]]])[0m
+  [0m   [0m  [33m      ^--- Use of undeclared Var customer.core/buy-grid[0m
+  [36m160[0m  [36m[0m
+  [36m161[0m  [36m[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn home-page [][0m
+  [36m164[0m  [36m  [:div.container[0m
+
+[36m----  Compiler Warning : Please see src/cljs/customer/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 0.966 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 0.86 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/customer/core.js
+Notifying browser that CSS file changed: resources/public/css/screen.css

@@ -16,8 +16,12 @@
 
 (defn login [params]
   (db/login
-   (:params params))
+    (:params params))
   (response/ok "Successful login"))
+(defn buy [params]
+  (db/buy
+    (:params params))
+  (response/ok "Successful buy"))
 
 (defroutes home-routes
   (GET "/" []
@@ -28,4 +32,7 @@
   (POST "/register" req
         (user-saved req))
   (POST "/login" req
-        (login req)))
+        (login req))
+  (POST "/buy" req
+        (buy req)))
+  

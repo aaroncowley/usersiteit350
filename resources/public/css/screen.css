@@ -6,6 +6,7 @@ body {
 .navbar {
   margin-bottom: 10px;
   border-radius: 0px;
+  color: #58d982;
 }
 .navbar-brand {
   float: none;

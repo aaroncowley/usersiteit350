@@ -78,6 +78,62 @@
             :value (:password @fields)}]]
         [:input.btn.btn-primary {:type :submit :on-click #(send-post! fields) :value "Submit"}]]])))
 
+
+(defn send-login! [fields]
+  (POST "/login"
+        {:params @fields
+         :handler #(secretary/dispatch! "#/about")
+         :error-handler #(.error js/console (str "error:" %))}))
+
+
+(defn login-form []
+ (let [fields (r/atom {})]
+  (fn []
+    [:div.content
+      [:div.form.group
+        [:p "Email: "
+          [:input.form-control
+            {:type :email
+            :email :email
+            :on-change #(swap! fields assoc :email (-> % .-target .-value))
+            :value (:email @fields)}]]
+        [:p "Password: "
+          [:input.form-control
+            {:type :password
+            :password :password
+            :on-change #(swap! fields assoc :password (-> % .-target .-value))
+            :value (:password @fields)}]]
+        [:input.btn.btn-primary {:type :submit :on-click #(send-login! fields) :value "Submit"}]]])))
+
+
+(defn send-buy! [fields]
+  (POST "/buy"
+        {:params @fields
+         :handler #(secretary/dispatch! "#/about")
+         :error-handler #(.error js/console (str "error:" %))}))
+
+
+
+
+(defn buy-form []
+  (let [fields (r/atom {})]
+    (fn []
+      [:div.content
+        [:div.form.group
+          [:p "Food Description: "
+            [:input.form-control
+              {:type :text
+              :food :food
+              :on-change #(swap! fields assoc :email (-> % .-target .-value))
+              :value (:food @fields)}]]
+          [:p "Password: "
+            [:input.form-control
+              {:type :password
+              :password :password
+              :on-change #(swap! fields assoc :password (-> % .-target .-value))
+              :value (:password @fields)}]]
+          [:input.btn.btn-primary {:type :submit :on-click #(send-buy! fields) :value "Submit"}]]])))
+
 (defn about-page []
   [:div.container
    [:div.row
@@ -94,13 +150,13 @@
   [:div.container
    [:div.row
     [:div.col-md-12
-     [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
+     [login-form]]]])
 
 (defn buy-page []
   [:div.container
    [:div.row
     [:div.col-md-12
-     [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
+     [buy-form]]]])
 
 
 
@@ -133,6 +189,10 @@
   (swap! session assoc :page :about))
 (secretary/defroute "/register" []
   (swap! session assoc :page :register))
+(secretary/defroute "/login" []
+  (swap! session assoc :page :login))
+;;(secretary/defroute "/buy" []
+;;  (swap! session assoc :page :buy))
 
 ;; -------------------------
 ;; History
